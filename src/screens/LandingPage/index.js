@@ -6,7 +6,7 @@ import {Button} from 'native-base';
 import styles from './style';
 import color from '../../assets/color';
 
-export default function LandingPage() {
+export default function LandingPage({navigation}) {
   const [sliderWidth, setWidth] = useState(0);
   const images = [
     require('../../assets/img1.jpg'),
@@ -38,7 +38,9 @@ export default function LandingPage() {
         </Button>
         <View style={styles.loginWrapper}>
           <Text style={styles.text}>Sudah punya akun?</Text>
-          <TouchableOpacity style={styles.loginBtn}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Login')}
+            style={styles.loginBtn}>
             <Text style={styles.loginBtnText}>Masuk</Text>
           </TouchableOpacity>
         </View>
