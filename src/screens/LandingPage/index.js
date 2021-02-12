@@ -33,7 +33,10 @@ export default function LandingPage({navigation}) {
         disableOnPress={true}
       />
       <View style={styles.bottomWrapper}>
-        <Button style={styles.signupBtn} block>
+        <Button
+          onPress={() => navigation.navigate('Signup')}
+          style={styles.signupBtn}
+          block>
           <Text style={styles.signupBtnText}>Daftar Sekarang</Text>
         </Button>
         <View style={styles.loginWrapper}>

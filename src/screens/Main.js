@@ -4,6 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import LandingPage from './LandingPage';
 import Login from './Login';
+import Signup from './Signup';
 
 const Stack = createStackNavigator();
 
@@ -14,6 +15,11 @@ const AuthStack = () => {
         options={{headerShown: false}}
         name="LandingPage"
         component={LandingPage}
+      />
+      <Stack.Screen
+        options={{headerTitle: ''}}
+        name="Signup"
+        component={Signup}
       />
       <Stack.Screen
         options={{headerTitle: ''}}

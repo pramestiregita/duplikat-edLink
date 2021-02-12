@@ -16,7 +16,7 @@ const loginSchema = Yup.object().shape({
     .required('Please input your password'),
 });
 
-export default function Login() {
+export default function Login({navigation}) {
   const password = useRef(null);
 
   return (
@@ -112,7 +112,9 @@ export default function Login() {
         </Button>
         <View style={styles.signupWrapper}>
           <Text style={styles.text}>Belum punya akun?</Text>
-          <TouchableOpacity style={styles.signupBtn}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Signup')}
+            style={styles.signupBtn}>
             <Text style={styles.signupBtnText}>Daftar Sekarang</Text>
           </TouchableOpacity>
         </View>
