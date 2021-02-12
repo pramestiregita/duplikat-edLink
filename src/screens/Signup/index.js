@@ -32,6 +32,11 @@ export default function Signup({navigation}) {
   const password = useRef(null);
   const confrimPassword = useRef(null);
 
+  const doSignup = (values) => {
+    console.log(values);
+    navigation.navigate('Verification');
+  };
+
   return (
     <ScrollView style={styles.parent}>
       <Text style={styles.title}>Daftar Baru</Text>
@@ -46,7 +51,7 @@ export default function Signup({navigation}) {
           password: '',
           confrimPassword: '',
         }}
-        onSubmit={(values) => console.log(values)}>
+        onSubmit={(values) => doSignup(values)}>
         {({
           handleChange,
           handleBlur,

@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import LandingPage from './LandingPage';
 import Login from './Login';
 import Signup from './Signup';
+import Verification from './Verification';
 
 const Stack = createStackNavigator();
 
@@ -38,6 +39,11 @@ export default function Main() {
           options={{headerShown: false}}
           name="AuthStack"
           component={AuthStack}
+        />
+        <Stack.Screen
+          options={{headerShown: false}}
+          name={'Verification'}
+          component={Verification}
         />
       </Stack.Navigator>
     </NavigationContainer>
