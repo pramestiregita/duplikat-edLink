@@ -41,6 +41,24 @@ const AuthStack = () => {
   );
 };
 
+const HomeStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        options={{
+          title: 'Beranda',
+          headerRight: () => (
+            <Icon name="bell" size={22} color={colors.buttonColor} />
+          ),
+          headerRightContainerStyle: {marginRight: 15},
+        }}
+        name="Home"
+        component={Home}
+      />
+    </Stack.Navigator>
+  );
+};
+
 const BottomTab = () => {
   return (
     <Tab.Navigator
@@ -57,8 +75,8 @@ const BottomTab = () => {
             <Icon name="home" size={size} color={color} />
           ),
         }}
-        name="Home"
-        component={Home}
+        name="HomeStack"
+        component={HomeStack}
       />
       <Tab.Screen
         options={{
