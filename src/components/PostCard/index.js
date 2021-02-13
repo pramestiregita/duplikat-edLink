@@ -2,12 +2,18 @@ import React from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import {Thumbnail} from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import {useNavigation} from '@react-navigation/native';
 
 import styles from './style';
 
 export default function Card({item}) {
+  const navigation = useNavigation();
+
   return (
-    <View key={item.id} style={styles.card}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate('PostDetail')}
+      key={item.id}
+      style={styles.card}>
       <View style={styles.cardTitle}>
         <Thumbnail source={require('../../assets/avatar.png')} />
         <View style={styles.nameWrapper}>
@@ -46,6 +52,6 @@ export default function Card({item}) {
           <Text style={styles.actionBtnText}>Komentari</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }

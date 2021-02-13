@@ -4,6 +4,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
+import colors from '../assets/color';
+
 import LandingPage from './LandingPage';
 import Login from './Login';
 import Signup from './Signup';
@@ -13,8 +15,7 @@ import Class from './Class';
 import Message from './Message';
 import Explore from './Explore';
 import Others from './Others';
-
-import colors from '../assets/color';
+import PostDetail from './PostDetail';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -68,6 +69,7 @@ const BottomTab = () => {
         inactiveTintColor: '#bfbfbf',
         tabStyle: {backgroundColor: colors.buttonColor},
         style: {height: 60},
+        keyboardHidesTabBar: true,
       }}>
       <Tab.Screen
         options={{
@@ -142,6 +144,11 @@ export default function Main() {
             options={{headerShown: false}}
             name={'BottomTab'}
             component={BottomTab}
+          />
+          <Stack.Screen
+            options={{title: ''}}
+            name="PostDetail"
+            component={PostDetail}
           />
         </Stack.Navigator>
       )}
