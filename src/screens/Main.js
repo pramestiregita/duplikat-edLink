@@ -2,6 +2,8 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import colors from '../assets/color';
@@ -11,14 +13,16 @@ import Login from './Login';
 import Signup from './Signup';
 import Verification from './Verification';
 import Home from './Home';
-import Class from './Class';
 import Message from './Message';
 import Explore from './Explore';
 import Others from './Others';
 import PostDetail from './PostDetail';
+import Akademik from './Akademik';
+import Umum from './Umum';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+const Slide = createMaterialTopTabNavigator();
 
 const AuthStack = () => {
   return (
@@ -60,6 +64,37 @@ const HomeStack = () => {
   );
 };
 
+const ClassSlide = () => {
+  return (
+    <Slide.Navigator
+      tabBarOptions={{
+        activeTintColor: colors.buttonColor,
+        inactiveTintColor: 'black',
+        labelStyle: {fontWeight: 'bold', textTransform: 'capitalize'},
+        indicatorStyle: {backgroundColor: colors.buttonColor},
+      }}>
+      <Slide.Screen name="Akademik" component={Akademik} />
+      <Slide.Screen name="Umum" component={Umum} />
+    </Slide.Navigator>
+  );
+};
+
+const ClassStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        options={{
+          title: 'Kelas',
+          headerRight: () => <Icon name="search" size={20} />,
+          headerRightContainerStyle: {marginRight: 15},
+        }}
+        name="ClassSlide"
+        component={ClassSlide}
+      />
+    </Stack.Navigator>
+  );
+};
+
 const BottomTab = () => {
   return (
     <Tab.Navigator
@@ -86,8 +121,8 @@ const BottomTab = () => {
             <Icon name="users" size={size} color={color} />
           ),
         }}
-        name="Class"
-        component={Class}
+        name="ClassSlide"
+        component={ClassStack}
       />
       <Tab.Screen
         options={{
