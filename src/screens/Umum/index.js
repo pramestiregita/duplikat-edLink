@@ -26,6 +26,9 @@ export default function Umum() {
           </View>
         </ImageBackground>
       </TouchableOpacity>
+      <TouchableOpacity style={styles.addBtn}>
+        <Icon name="plus" size={20} color="#fff" />
+      </TouchableOpacity>
     </View>
   );
 }

@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
   parent: {
     flex: 1,
-    backgroundColor: '#ffff',
+    position: 'relative',
   },
   card: {
     width: '100%',
@@ -36,5 +36,17 @@ export default StyleSheet.create({
   },
   text: {
     color: '#fff',
+  },
+  addBtn: {
+    position: 'absolute',
+    backgroundColor: '#ffab00',
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 10,
+    bottom: 20,
+    right: 20,
   },
 });
