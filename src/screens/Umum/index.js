@@ -4,10 +4,12 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import styles from './style';
 
-export default function Umum() {
+export default function Umum({navigation}) {
   return (
     <View style={styles.parent}>
-      <TouchableOpacity style={styles.card}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('GroupSlide')}
+        style={styles.card}>
         <ImageBackground
           style={styles.image}
           source={require('../../assets/classroom.jpg')}>

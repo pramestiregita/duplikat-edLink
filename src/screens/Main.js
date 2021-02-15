@@ -19,6 +19,11 @@ import Others from './Others';
 import PostDetail from './PostDetail';
 import Akademik from './Akademik';
 import Umum from './Umum';
+import Diskusi from './Diskusi';
+import Sesi from './Sesi';
+import Tugas from './Tugas';
+import Kuis from './Kuis';
+import Files from './Files';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -79,6 +84,18 @@ const ClassSlide = () => {
   );
 };
 
+const GroupSlide = () => {
+  return (
+    <Slide.Navigator>
+      <Slide.Screen name="Diskusi" component={Diskusi} />
+      <Slide.Screen name="Sesi" component={Sesi} />
+      <Slide.Screen name="Tugas" component={Tugas} />
+      <Slide.Screen name="Kuis" component={Kuis} />
+      <Slide.Screen name="Files" component={Files} />
+    </Slide.Navigator>
+  );
+};
+
 const ClassStack = () => {
   return (
     <Stack.Navigator>
@@ -90,6 +107,11 @@ const ClassStack = () => {
         }}
         name="ClassSlide"
         component={ClassSlide}
+      />
+      <Stack.Screen
+        options={{title: 'Helpdesk edLink'}}
+        name="GroupSlide"
+        component={GroupSlide}
       />
     </Stack.Navigator>
   );
