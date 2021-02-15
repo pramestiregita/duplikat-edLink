@@ -24,6 +24,7 @@ import Sesi from './Sesi';
 import Tugas from './Tugas';
 import Kuis from './Kuis';
 import Files from './Files';
+import Informasi from './Informasi';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -206,6 +207,11 @@ export default function Main() {
             options={{title: ''}}
             name="PostDetail"
             component={PostDetail}
+          />
+          <Stack.Screen
+            options={{title: 'Buat Informasi'}}
+            name="Informasi"
+            component={Informasi}
           />
         </Stack.Navigator>
       )}

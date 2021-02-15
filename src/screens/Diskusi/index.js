@@ -7,7 +7,7 @@ import styles from './styles';
 
 import Card from '../../components/PostCard';
 
-export default function Diskusi() {
+export default function Diskusi({navigation}) {
   const addRef = useRef();
 
   const data = [{id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}];
@@ -55,7 +55,12 @@ export default function Diskusi() {
               <Icon name="times" size={25} />
             </TouchableOpacity>
           </View>
-          <TouchableOpacity style={styles.listBtn}>
+          <TouchableOpacity
+            onPress={() => {
+              addRef.current.close();
+              navigation.navigate('Informasi');
+            }}
+            style={styles.listBtn}>
             <View style={styles.listIcon}>
               <Icon name="bullhorn" size={20} />
             </View>
