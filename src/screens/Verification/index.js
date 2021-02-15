@@ -13,7 +13,7 @@ const verificationSchema = Yup.object().shape({
     .max(5, 'Please insert a valid code'),
 });
 
-export default function Verification() {
+export default function Verification({navigation}) {
   const email = 'demo@mail.com';
 
   return (
@@ -47,7 +47,10 @@ export default function Verification() {
                 <Text style={styles.alert}>{errors.code}</Text>
               </View>
             ) : null}
-            <Button style={styles.nextBtn} block>
+            <Button
+              onPress={() => navigation.navigate('Login')}
+              style={styles.nextBtn}
+              block>
               <Text style={styles.nextBtnText}>Lanjutkan</Text>
             </Button>
           </View>

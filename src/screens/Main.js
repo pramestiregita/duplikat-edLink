@@ -62,6 +62,7 @@ const HomeStack = () => {
             <Icon name="bell" size={22} color={colors.buttonColor} />
           ),
           headerRightContainerStyle: {marginRight: 15},
+          headerLeft: '',
         }}
         name="Home"
         component={Home}
@@ -105,6 +106,7 @@ const ClassStack = () => {
           title: 'Kelas',
           headerRight: () => <Icon name="search" size={20} />,
           headerRightContainerStyle: {marginRight: 15},
+          headerLeft: '',
         }}
         name="ClassSlide"
         component={ClassSlide}
@@ -179,42 +181,35 @@ const BottomTab = () => {
 };
 
 export default function Main() {
-  const isLogin = true;
-
   return (
     <NavigationContainer>
-      {!isLogin ? (
-        <Stack.Navigator>
-          <Stack.Screen
-            options={{headerShown: false}}
-            name="AuthStack"
-            component={AuthStack}
-          />
-          <Stack.Screen
-            options={{headerShown: false}}
-            name={'Verification'}
-            component={Verification}
-          />
-        </Stack.Navigator>
-      ) : (
-        <Stack.Navigator>
-          <Stack.Screen
-            options={{headerShown: false}}
-            name={'BottomTab'}
-            component={BottomTab}
-          />
-          <Stack.Screen
-            options={{title: ''}}
-            name="PostDetail"
-            component={PostDetail}
-          />
-          <Stack.Screen
-            options={{title: 'Buat Informasi'}}
-            name="Informasi"
-            component={Informasi}
-          />
-        </Stack.Navigator>
-      )}
+      <Stack.Navigator>
+        <Stack.Screen
+          options={{headerShown: false}}
+          name="AuthStack"
+          component={AuthStack}
+        />
+        <Stack.Screen
+          options={{headerShown: false}}
+          name={'Verification'}
+          component={Verification}
+        />
+        <Stack.Screen
+          options={{headerShown: false}}
+          name={'BottomTab'}
+          component={BottomTab}
+        />
+        <Stack.Screen
+          options={{title: ''}}
+          name="PostDetail"
+          component={PostDetail}
+        />
+        <Stack.Screen
+          options={{title: 'Buat Informasi'}}
+          name="Informasi"
+          component={Informasi}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }

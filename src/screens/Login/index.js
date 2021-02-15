@@ -88,7 +88,10 @@ export default function Login({navigation}) {
             <TouchableOpacity style={styles.forgotBtn}>
               <Text style={styles.forgotBtnText}>Lupa Kata Sandi?</Text>
             </TouchableOpacity>
-            <Button style={styles.loginBtn} block>
+            <Button
+              onPress={() => navigation.navigate('BottomTab')}
+              style={styles.loginBtn}
+              block>
               <Text style={styles.loginBtnText}>masuk</Text>
             </Button>
           </View>
